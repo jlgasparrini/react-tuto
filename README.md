@@ -1,2 +1,2 @@
-# react-tuto
+# React tuto
 A little Reactjs tutorial
