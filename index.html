@@ -16,13 +16,24 @@
     </section>
     <script type="text/babel">
       var User = React.createClass({
+        getInitialState: function() {
+          return {
+              username: "@jlgasparrini",
+              avatar: "twitter.jpg",
+              description: "Software Enginner at @plumforplum"
+            }
+        },
+        changeUser: function() {
+          console.log("User clicked! :D");
+        },
         render: function() {
+          var imageRoute = "./assets/images/" + this.state.avatar;
           return (
-            <article className="user">
-              <img src="./assets/images/twitter.jpg" className="user-avatar" width="100"/>
+            <article className="user" onClick= {this.changeUser}>
+              <img src={imageRoute} className="user-avatar" width="100"/>
               <div className="user-description">
-                <p className="user-name"> @jlgasparrini </p>
-                <p> Software Enginner at @plumforplum </p>
+                <p className="user-name"> {this.state.username} </p>
+                <p> {this.state.description} </p>
               </div>
             </article>
           )
