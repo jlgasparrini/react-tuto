@@ -18,13 +18,27 @@
       var User = React.createClass({
         getInitialState: function() {
           return {
+              counter: 0,
               username: "@jlgasparrini",
               avatar: "twitter.jpg",
               description: "Software Enginner at @plumforplum"
             }
         },
         changeUser: function() {
-          console.log("User clicked! :D");
+          if (this.state.counter % 2 == 0)
+            this.setState({
+              counter: this.state.counter + 1,
+              username: "Neo",
+              avatar: "facebook.jpg",
+              description: "The chosen one..."
+            })
+          else
+            this.setState({
+              counter: this.state.counter + 1,
+              username: "@jlgasparrini",
+              avatar: "twitter.jpg",
+              description: "Software Enginner at @plumforplum"
+            })
         },
         render: function() {
           var imageRoute = "./assets/images/" + this.state.avatar;
