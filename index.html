@@ -12,16 +12,24 @@
 
   <body>
     <section id="user">
-      <article class="user">
-        <img src="./assets/images/twitter.jpg" class="user-avatar" width="100">
-        <div class="user-description">
-          <p class="user-name"> @jlgasparrini </p>
-          <p> Software Enginner at @plumforplum </p>
-        </div>
-      </article>
+
     </section>
     <script type="text/babel">
-      // Insert the reacts magic here! :P
+      var User = React.createClass({
+        render: function() {
+          return (
+            <article className="user">
+              <img src="./assets/images/twitter.jpg" className="user-avatar" width="100"/>
+              <div className="user-description">
+                <p className="user-name"> @jlgasparrini </p>
+                <p> Software Enginner at @plumforplum </p>
+              </div>
+            </article>
+          )
+        }
+      });
+
+      ReactDOM.render( <User/>, document.getElementById('user') )
     </script>
   </body>
 
