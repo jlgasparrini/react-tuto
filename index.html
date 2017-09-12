@@ -25,6 +25,11 @@
             }
         },
         changeUser: function() {
+          var colors = ['#760CE8', '#4782B1', '#E8890C'];
+          document.body.style.background =
+            colors[Math.floor(Math.random()*colors.length)];
+
+
           if (this.state.counter % 2 == 0)
             this.setState({
               counter: this.state.counter + 1,
